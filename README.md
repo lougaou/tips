@@ -1,2 +1,2 @@
-# tips
+# TIPS
 All my tips
