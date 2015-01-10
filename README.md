@@ -1,2 +1,0 @@
-# TIPS
-All my tips
