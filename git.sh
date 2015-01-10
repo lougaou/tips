@@ -1,3 +1,16 @@
+
+#Voir les branches
+git branch
+
+#Créer une nouvelle branche nommée "MABRANCHE"
+git branch MABRANCHE
+
+#Supprimer la branche nommée "MABRANCHE"
+git branch -d MABRANCHE
+
+#Voir les braches non fusionnées
+git branch --no-merged
+
 #Annuler des modifications su run fichier non commité
 git checkout -- FICHIER
 
