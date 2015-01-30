@@ -54,6 +54,20 @@ git config -e;
 Ajouter dans [remote "origin"]
 pushurl = git@github.com:XXX/PATHGIT.git
 
+**Lister les branches du dépôt**
+```shell
+git branch -a;
+```
+**Creation d'un branche distante ma_branche_distante sur le repository lougaou**
+```shell
+git checkout -b ma_branche_distante ;
+git push -u lougaou ma_branche_distante ;
+```
+**Suppression de la branche distante ma_branche_distante sur le repository lougaou**
+```shell
+git push lougaou --delete ma_branche_distante;
+```
+
 ## <a name="participation"></a> Participation au projet
 **Récupérer les dernières modifications**
 ```shell
@@ -67,17 +81,4 @@ git commit -m "Message pour le log";
 **Lister les dépôts git distants en affichant leurs URLs**
 ```shell
 git remote -v;
-```
-**Lister les branches du dépôt**
-```shell
-git branch -a;
-```
-**Creation d'un branche distante ma_branche_distante sur le repository lougaou**
-```shell
-git checkout -b ma_branche_distante ;
-git push -u lougaou ma_branche_distante ;
-```
-**Suppression de la branche distante ma_branche_distante sur le repository lougaou**
-```shell
-git push lougaou --delete ma_branche_distante;
 ```
