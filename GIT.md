@@ -46,14 +46,6 @@ ou;
 git clone ssh://LOGIN@ftp.xxx.net/PATHGIT.git;
 ```
 
-## <a name="configurations"></a> Configurations
-**Pour Push dans mon fork (XXX)**
-```shell
-git config -e;
-```
-Ajouter dans [remote "origin"]
-pushurl = git@github.com:XXX/PATHGIT.git
-
 **Lister les branches du dépôt**
 ```shell
 git branch -a;
@@ -67,6 +59,13 @@ git push -u lougaou ma_branche_distante ;
 ```shell
 git push lougaou --delete ma_branche_distante;
 ```
+## <a name="configurations"></a> Configurations
+**Pour Push dans mon fork (XXX)**
+```shell
+git config -e;
+```
+Ajouter dans [remote "origin"]
+pushurl = git@github.com:XXX/PATHGIT.git
 
 ## <a name="participation"></a> Participation au projet
 **Récupérer les dernières modifications**
