@@ -59,6 +59,10 @@ git push -u lougaou ma_branche_distante ;
 ```shell
 git push lougaou --delete ma_branche_distante;
 ```
+**Suppression des réferences supprimée sur le repository distant lougaou**
+```shell
+git remote prune lougaou # Don't show branches that have already been deleted
+```
 ## <a name="configurations"></a> Configurations
 **Pour Push dans mon fork (XXX)**
 ```shell
