@@ -3,6 +3,7 @@
  - [Branches](#branches)
  - [Configurations](#configurations)
  - [Participation au projet](#participation)
+ - [Tags](#tags)
  
 ## <a name="corrections"></a> Corrections
 **Annuler des modifications sur un fichier non commité**
@@ -86,7 +87,7 @@ git commit -m "Message pour le log";
 git remote -v;
 ```
 
-## <a name="configurations"></a> Tags
+## <a name="tags"></a> Tags
 **Suppression sur le serveur de tous les tags**
 ```shell
 git tag -l | xargs -n 1 git push --delete origin
