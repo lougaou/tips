@@ -85,3 +85,15 @@ git commit -m "Message pour le log";
 ```shell
 git remote -v;
 ```
+
+## <a name="configurations"></a> Tags
+**Suppression sur le serveur de tous les tags**
+```shell
+git tag -l | xargs -n 1 git push --delete origin
+```
+
+**Suppression local de tous les tags**
+```shell
+git tag | xargs git tag -d
+```
+
