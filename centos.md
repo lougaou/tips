@@ -6,9 +6,9 @@
 sudo pip install ;
 ```
 
-## <a name="Fail2Ban"></a> Fail2Ban
+## <a name="Fail2Ban"></a> fail2Ban
 
-### Settings for Fail2Ban
+### Settings for fail2Ban
 ```bash
 yum install epel-release ;
 yum install fail2ban fail2ban-systemd ;
@@ -76,10 +76,71 @@ sudo yum install epel-release ;
 sudo yum install -y python-pip ;
 sudo pip install docker-compose ;
 sudo yum upgrade python* ;
+
+mkdir -p /home/lougaou/dockers/scripts ;
+mkdir -p /home/lougaou/dockers/data ;
 ```
 #### Sources
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-centos-7
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-centos-7
+
+## <a name="Owncloud"></a> Owncloud
+
+```bash
+mkdir -p /home/lougaou/dockers/scripts/owncloud
+mkdir -p /home/lougaou/dockers/data/owncloud/data/certs
+```
+
+### docker-compose.yml
+```bash
+cd /home/lougaou/dockers/scripts/owncloud
+vi docker-compose.yml
+```
+```yaml
+  db: 
+    image: webhippie/mariadb
+    labels:
+      - traefik.enable=false
+    environment:
+      - MARIADB_ROOT_PASSWORD=owncloud
+      - MARIADB_USERNAME=<CHANGE>
+      - MARIADB_PASSWORD=<CHANGE>
+      - MARIADB_DATABASE=owncloud
+    volumes:
+      - ../../data/owncloud/mysql:/var/lib/mysql:z
+
+  redis:
+    image: webhippie/redis
+    labels:
+      - traefik.enable=false
+
+  owncloud:
+    image: owncloud/server:10.0.0
+    ports:
+      - 443:443
+      - 80:80
+    links:
+      - db
+      - redis
+    labels:
+      - traefik.port=80
+      - traefik.frontend.passHostHeader=true
+    environment:
+      - OWNCLOUD_DOMAIN=cloud.gainsbourg.net
+      - OWNCLOUD_DB_TYPE=mysql
+      - OWNCLOUD_DB_NAME=owncloud
+      - OWNCLOUD_DB_USERNAME=<CHANGE>
+      - OWNCLOUD_DB_PASSWORD=<CHANGE>
+      - OWNCLOUD_DB_HOST=db
+      - OWNCLOUD_ADMIN_USERNAME=<CHANGE>
+      - OWNCLOUD_ADMIN_PASSWORD=<CHANGE>
+      - OWNCLOUD_REDIS_ENABLED=true
+      - OWNCLOUD_REDIS_HOST=redis
+    volumes:
+      - ../../data/owncloud/data:/mnt/data:z
+```
+
+https://hub.docker.com/r/owncloud/server/
 
 ## <a name="Certificats"></a> Certificats
 
