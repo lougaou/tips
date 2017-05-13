@@ -1,5 +1,11 @@
 # Installation CentOs 7
 
+## <a name="sudo"></a> sudo
+
+```bash
+sudo pip install ;
+```
+
 ## <a name="Fail2Ban"></a> Fail2Ban
 
 ### Settings for Fail2Ban
@@ -53,3 +59,25 @@ fail2ban-client set sshd unbanip IPADDRESS
 ***
 #### Sources
 https://www.howtoforge.com/tutorial/how-to-install-fail2ban-on-centos/
+
+
+## <a name="Docker"></a> Docker
+
+### Settings for Fail2Ban
+```bash
+sudo yum check-update ;
+curl -fsSL https://get.docker.com/ | sh ;
+sudo systemctl start docker ;
+sudo systemctl status docker ;
+sudo systemctl enable docker ;
+sudo usermod -aG docker $(whoami) ;
+sudo service docker restart ;
+
+sudo yum install epel-release ;
+sudo yum install -y python-pip ;
+sudo pip install docker-compose ;
+sudo yum upgrade python* ;
+```
+#### Sources
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-centos-7
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-centos-7
