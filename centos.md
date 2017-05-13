@@ -88,6 +88,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-c
 sudo yum install git ;
 sudo git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt ;
 ```
+https://www.ssllabs.com/ssltest/
 
 ### Owncloud
 ```bash
