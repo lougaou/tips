@@ -63,7 +63,6 @@ https://www.howtoforge.com/tutorial/how-to-install-fail2ban-on-centos/
 
 ## <a name="Docker"></a> Docker
 
-### Settings for Fail2Ban
 ```bash
 sudo yum check-update ;
 curl -fsSL https://get.docker.com/ | sh ;
