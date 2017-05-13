@@ -80,3 +80,19 @@ sudo yum upgrade python* ;
 #### Sources
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-centos-7
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-centos-7
+
+## <a name="Certificats"></a> Certificats
+
+### Installation
+```bash
+sudo yum install git ;
+sudo git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt ;
+```
+
+### Owncloud
+```bash
+cd /opt/letsencrypt ;
+./letsencrypt-auto --agree-tos --renew-by-default --standalone --preferred-challenges http-01 --http-01-port 80 certonly -d cloud.gainsbourg.net --email letsencrypt@gainsbourg.net ;
+sudo cp /etc/letsencrypt/live/cloud.gainsbourg.net/cert.pem /home/lougaou/dockers/dockers-data/owncloud/data/certs/ssl-cert.crt ;
+sudo cp /etc/letsencrypt/live/cloud.gainsbourg.net/privkey.pem /home/lougaou/dockers/dockers-data/owncloud/data/certs/ssl-cert.key ;
+```
