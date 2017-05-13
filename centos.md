@@ -96,3 +96,6 @@ cd /opt/letsencrypt ;
 sudo cp /etc/letsencrypt/live/cloud.gainsbourg.net/cert.pem /home/lougaou/dockers/dockers-data/owncloud/data/certs/ssl-cert.crt ;
 sudo cp /etc/letsencrypt/live/cloud.gainsbourg.net/privkey.pem /home/lougaou/dockers/dockers-data/owncloud/data/certs/ssl-cert.key ;
 ```
+
+#### Sources
+https://www.linode.com/docs/security/ssl/install-lets-encrypt-to-create-ssl-certificates
