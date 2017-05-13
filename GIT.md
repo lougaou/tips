@@ -1,4 +1,4 @@
-#GIT Trucs et astuces
+# GIT Trucs et astuces
  - [Corrections](#corrections)
  - [Branches](#branches)
  - [Configurations](#configurations)
