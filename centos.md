@@ -13,6 +13,8 @@ cat ~/.ssh/id_rsa.pub | ssh USER@SERVER_IP "cat - >> ~/.ssh/authorized_keys"
 ```bash
 service sshd restart
 ```
+#### Sources
+https://wiki.centos.org/HowTos/Network/SecuringSSH
 
 ## <a name="sudo"></a> sudo
 
@@ -73,7 +75,6 @@ fail2ban-client status
 ```bash
 fail2ban-client set sshd unbanip IPADDRESS
 ```
-***
 #### Sources
 https://www.howtoforge.com/tutorial/how-to-install-fail2ban-on-centos/
 
