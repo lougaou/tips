@@ -178,8 +178,11 @@ sudo firewall-cmd --reload
 
 ### Owncloud
 ```bash
+su -
 cd /opt/letsencrypt ;
 ./letsencrypt-auto --agree-tos --renew-by-default --standalone --preferred-challenges http-01 --http-01-port 80 certonly -d cloud.gainsbourg.net --email letsencrypt@gainsbourg.net ;
+exit
+
 sudo cp /etc/letsencrypt/live/cloud.gainsbourg.net/cert.pem /home/lougaou/dockers/dockers-data/owncloud/data/certs/ssl-cert.crt ;
 sudo cp /etc/letsencrypt/live/cloud.gainsbourg.net/privkey.pem /home/lougaou/dockers/dockers-data/owncloud/data/certs/ssl-cert.key ;
 ```
