@@ -169,6 +169,13 @@ sudo git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt ;
 ```
 https://www.ssllabs.com/ssltest/
 
+### Firewall
+```bash
+sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
+sudo firewall-cmd --zone=public --add-port=443/tcp --permanent
+sudo firewall-cmd --reload
+```
+
 ### Owncloud
 ```bash
 cd /opt/letsencrypt ;
