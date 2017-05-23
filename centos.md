@@ -1,10 +1,27 @@
 # Installation CentOs 7
 
+## SSH
+```bash
+ssh-keygen -t rsa -b 4096 -C "email@gmail.com"
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub | ssh USER@SERVER_IP "cat - >> ~/.ssh/authorized_keys"
+```
+### /etc/ssh/sshd_config
+> PermitRootLogin no
+
+```bash
+service sshd restart
+```
+
 ## <a name="sudo"></a> sudo
 
 ```bash
-sudo pip install ;
+sudo visudo
 ```
+
+> USER ALL=(ALL) NOPASSWD:ALL
+
 
 ## <a name="Fail2Ban"></a> fail2Ban
 
