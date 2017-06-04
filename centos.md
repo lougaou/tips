@@ -200,7 +200,7 @@ sudo python sensor.py
 ```
 
 ### maltrail.conf
-http://passwordsgenerator.net/sha256-hash-generator/
+http://www.xorbin.com/tools/sha256-hash-calculator
 
 > USERS \
     xav:9C85FE7B3420A3B56B2CCD02C4B874F1B71DA6BC092EBE32CDCBC73A6F8179CB:0:0.0.0.0/0 \
