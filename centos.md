@@ -189,3 +189,37 @@ sudo cp /etc/letsencrypt/live/cloud.gainsbourg.net/privkey.pem /home/lougaou/doc
 
 #### Sources
 https://www.linode.com/docs/security/ssl/install-lets-encrypt-to-create-ssl-certificates
+
+## Maltrail
+```bash
+sudo yum install git
+sudo yum install pcapy
+git clone https://github.com/stamparm/maltrail.git
+cd maltrail
+sudo python sensor.py
+```
+
+### maltrail.conf
+http://passwordsgenerator.net/sha256-hash-generator/
+
+> USERS \
+    xav:9C85FE7B3420A3B56B2CCD02C4B874F1B71DA6BC092EBE32CDCBC73A6F8179CB:0:0.0.0.0/0 \
+  \#   admin:9ab3cd9d67bf49d01f6a2e33d0bd9bc804ddbe6ce1ff5d219c42624851db5dbc:0:0.0.0.0/0  \
+
+```bash
+sudo firewall-cmd --zone=public --add-port=8338/tcp --permanent
+sudo firewall-cmd --reload
+```
+
+### Start
+```bash
+sudo python sensor.py & ;
+nohup python server.py &
+```
+http://163.172.36.115:8338/
+
+### Stop
+```bash
+sudo pkill -f sensor.py
+pkill -f server.py
+```
