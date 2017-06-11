@@ -162,13 +162,6 @@ https://hub.docker.com/r/owncloud/server/
 
 ## <a name="Certificats"></a> Certificats
 
-### Installation
-```bash
-sudo yum install git ;
-sudo git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt ;
-```
-https://www.ssllabs.com/ssltest/
-
 ### Firewall
 ```bash
 sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
@@ -176,16 +169,16 @@ sudo firewall-cmd --zone=public --add-port=443/tcp --permanent
 sudo firewall-cmd --reload
 ```
 
-### Owncloud
+### Installation
 ```bash
-su -
-cd /opt/letsencrypt ;
-./letsencrypt-auto --agree-tos --renew-by-default --standalone --preferred-challenges http-01 --http-01-port 80 certonly -d cloud.gainsbourg.net --email letsencrypt@gainsbourg.net ;
-exit
-
-sudo cp /etc/letsencrypt/live/cloud.gainsbourg.net/cert.pem /home/lougaou/dockers/dockers-data/owncloud/data/certs/ssl-cert.crt ;
-sudo cp /etc/letsencrypt/live/cloud.gainsbourg.net/privkey.pem /home/lougaou/dockers/dockers-data/owncloud/data/certs/ssl-cert.key ;
+sudo yum install git ;
+sudo git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt ;
+sudo cd /opt/letsencrypt ;
+sudo ./letsencrypt-auto --agree-tos --renew-by-default --standalone --preferred-challenges http-01 --http-01-port 80 certonly -d gainsbourg.net -d www.gainsbourg.net -d images.gainsbourg.net -d api.gainsbourg.net -d genealogie.gainsbourg.net -d cloud.gainsbourg.net --email letsencrypt@gainsbourg.net ;
+sudo cp /etc/letsencrypt/live/gainsbourg.net/cert.pem /home/xav/docker/confs/traefik/certificates/traefik.crt ;
+sudo cp /etc/letsencrypt/live/gainsbourg.net/privkey.pem /home/xav/docker/confs/traefik/certificates/traefik.key ;
 ```
+https://www.ssllabs.com/ssltest/
 
 #### Sources
 https://www.linode.com/docs/security/ssl/install-lets-encrypt-to-create-ssl-certificates
