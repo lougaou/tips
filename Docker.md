@@ -1,9 +1,5 @@
 # DOCKER Trucs et astuces
- - [Corrections](#corrections)
- - [Branches](#branches)
- - [Configurations](#configurations)
- - [Participation au projet](#participation)
- - [Tags](#tags)
+ - [Nginx](#nginx)
  
 ## <a name="nginx"></a> Nginx
 **Recharger la config nginx**
